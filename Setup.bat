@@ -93,6 +93,7 @@ GOTO GRACEFULEXIT
 :ABORT
 pause
 echo Aborted...
+exit
 
 :GRACEFULEXIT
 echo Build done!
