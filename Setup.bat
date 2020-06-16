@@ -78,6 +78,10 @@ echo ">>>>>>>>>> copy programs"
 robocopy "%CMAKE_BUILD_DIR%\Release" "%GRPC_PROGRAMS_DIR%" *.exe /R:0 /S
 copy "%CMAKE_BUILD_DIR%\third_party\protobuf\Release\protoc.exe" "%GRPC_PROGRAMS_DIR%\protoc.exe"
 
+:COPY_PROTOCOL_BUFFERS
+echo ">>>>>>>>>> copy protocol buffers"
+robocopy "%GRPC_ROOT%\third_party\protobuf\src" "%GRPC_PROGRAMS_DIR%" /R:0 /S
+
 :REMOVE_USELESS_LIBRARIES
 echo ">>>>>>>>>> remove useless libraries"
 del "%GRPC_LIBRARIES_DIR%\grpc_csharp_ext.lib"
